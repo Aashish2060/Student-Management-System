@@ -1,0 +1,319 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    background: #ecf0f1; /* neutral background for dashboards */
+}
+
+/* =========================
+   LOGIN BACKGROUND SECTION
+========================= */
+.login-bg {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url("../images/image.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Dark overlay */
+.login-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 0;
+}
+
+/* =========================
+   LOGIN PAGE STYLES
+========================= */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+/* ✅ CHANGED: smaller login box with slight transparency */
+.login-box {
+    background: rgba(255, 255, 255, 0.9); /* slight transparency */
+    padding: 28px;                        /* smaller padding */
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+    width: 100%;
+    max-width: 330px;                     /* reduced width */
+}
+
+/* ✅ CHANGED: smaller heading */
+.login-box h1 {
+    color: #667eea;
+    margin-bottom: 22px;
+    text-align: center;
+    font-size: 20px;
+}
+
+/* =========================
+   FORMS & BUTTONS
+========================= */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #5568d3;
+}
+
+.btn-secondary { background: #6c757d; }
+.btn-secondary:hover { background: #5a6268; }
+
+.btn-danger { background: #dc3545; }
+.btn-danger:hover { background: #c82333; }
+
+.btn-success { background: #28a745; }
+.btn-success:hover { background: #218838; }
+
+.btn-small {
+    padding: 6px 12px;
+    font-size: 14px;
+    margin-right: 5px;
+    width: auto;
+}
+
+/* =========================
+   MESSAGES
+========================= */
+.message {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* =========================
+   DASHBOARD STYLES
+========================= */
+.dashboard {
+    display: none;
+}
+
+.dashboard.active {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background: #2c3e50;
+    color: white;
+    min-height: 100vh;
+    padding: 20px 0;
+}
+
+.sidebar-header {
+    padding: 0 20px 20px;
+    border-bottom: 1px solid #34495e;
+}
+
+.sidebar-header h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.sidebar-header p {
+    font-size: 14px;
+    color: #bdc3c7;
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 20px 0;
+}
+
+.nav-menu li {
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.nav-menu li:hover {
+    background: #34495e;
+}
+
+.nav-menu li.active {
+    background: #667eea;
+}
+
+.main-content {
+    flex: 1;
+    padding: 30px;
+    background: #ecf0f1;
+    overflow-y: auto;
+    max-height: 100vh;
+}
+
+/* =========================
+   CARDS & TABLES
+========================= */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background: #f8f9fa;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+table tr:hover {
+    background: #f8f9fa;
+}
+
+/* =========================
+   LOGOUT
+========================= */
+.logout-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px;
+    width: calc(100% - 40px);
+}
+
+.logout-btn:hover {
+    background: #c0392b;
+}
+
+/* =========================
+   DEFAULT CREDS
+========================= */
+.default-creds {
+    background: #e8f4f8;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+.default-creds h3 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.default-creds p {
+    margin: 5px 0;
+    color: #34495e;
+}
+
+/* =========================
+   UTILITIES
+========================= */
+.hidden {
+    display: none;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .dashboard.active {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
